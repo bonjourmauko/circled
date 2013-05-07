@@ -14,6 +14,7 @@ feature "Link two words as synonyms" do
 
   scenario "Create a word" do
     # Given there is no "word" with the "name" "Good"
+    Word.all.each { |w| w.destroy }
     Word.find(name: "Good").should be_nil
 
     # And I am on the "words" page
@@ -33,5 +34,27 @@ feature "Link two words as synonyms" do
 
     # And see the "word" with the "name" "Good"
     page.should have_content "Good"
+  end
+
+  scenario "Delete a word", js: true do
+    # Given there is a"word" with the "name" "Evil"
+    Word.all.each { |w| w.destroy }
+    Word.create(name: "Evil")
+
+    # And I am on the "words" page
+    visit words_path
+
+    # And see the "word" with the "name" "Evil"
+    page.should have_content "Evil"
+
+    # When I follow "Delete Evil"
+    click_link "Delete Evil"
+
+    # Then I should be on the "words" page
+    page.current_path.should eq words_path
+
+    # And not see the "word" with the "name" "Evil"
+    visit words_path # yeah I know! :/
+    page.should_not have_content "Evil"
   end
 end

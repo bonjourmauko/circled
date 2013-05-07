@@ -13,8 +13,10 @@ gem 'jquery-rails'
 gem "puma", ">= 1.6.3"
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
+gem "rspec-instafail", :group => :development
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "steak", ">= 2.0.0", :group => :test
+gem "poltergeist", :group => :test
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "simple_form", ">= 2.1.0"
 gem "neo4j"

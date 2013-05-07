@@ -1,5 +1,3 @@
-= Word.find name: "pene"
-
 %h1 Listing words
 
 %table.scaffold.common-table.zebra-stripped.sortable
@@ -12,6 +10,7 @@
   - @words.each do |word|
     %tr
       %td= word.name
+      %td.button_column= link_to "Delete #{word.name}", word, confirm: 'Are you nuts?', method: :delete, class: 'btn danger float_left'
 
 %br
 
