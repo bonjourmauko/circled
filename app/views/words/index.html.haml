@@ -10,6 +10,7 @@
   - @words.each do |word|
     %tr
       %td= word.name
+      %td.button_column= link_to "Add synonyms to #{word.name}", edit_word_path(word), class: 'btn primary float_left'
       %td.button_column= link_to "Delete #{word.name}", word, confirm: 'Are you nuts?', method: :delete, class: 'btn danger float_left'
 
 %br

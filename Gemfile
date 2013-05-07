@@ -10,6 +10,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "cocoon"
 gem "puma", ">= 1.6.3"
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development

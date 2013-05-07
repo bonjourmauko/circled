@@ -1,5 +1,12 @@
 %h1 New word
 
-= render 'form'
+= simple_form_for @word do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :name
+
+  .actions
+    = f.button :submit, 'Save'
 
 = link_to 'Back', words_path

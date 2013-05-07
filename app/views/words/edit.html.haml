@@ -1,0 +1,13 @@
+%h1 Adding synonyms to #{@word.name}
+
+= simple_form_for @word do |f|
+  = f.error_notification
+
+  .inputs
+    = f.simple_fields_for :synonyms do |synonym|
+      = f.input :synonym
+
+  .actions
+    = f.button :submit, 'Save'
+
+= link_to 'Back', words_path
