@@ -72,3 +72,6 @@ pickle-email-*.html
 
 # vim artifacts
 **.swp
+
+# neo4j dbs
+/db/neo4j-*

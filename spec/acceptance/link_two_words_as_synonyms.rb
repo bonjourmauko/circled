@@ -14,24 +14,24 @@ feature "Link two words as synonyms" do
 
   scenario "Create a word" do
     # Given there is no "word" with the "name" "Good"
-    pending ""
+    Word.find(name: "Good").should be_nil
 
     # And I am on the "words" page
-    pending ""
+    visit words_path
 
     # When I follow "Add word"
-    pending ""
+    click_link "Add word"
 
     # And I fill in "Name" with "Good"
-    pending ""
+    fill_in "Name", with: "Good"
 
     # And I press "Add"
-    pending ""
+    click_button "Save"
 
     # Then I should be on the "words" page
-    pending ""
+    page.current_path.should eq words_path
 
     # And see the "word" with the "name" "Good"
-    pending ""
+    page.should have_content "Good"
   end
 end

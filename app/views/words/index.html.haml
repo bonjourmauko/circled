@@ -1,0 +1,18 @@
+= Word.find name: "pene"
+
+%h1 Listing words
+
+%table.scaffold.common-table.zebra-stripped.sortable
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @words.each do |word|
+    %tr
+      %td= word.name
+
+%br
+
+= link_to 'Add word', new_word_path, class: 'btn primary'
