@@ -10,9 +10,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 Dir[Rails.root.join("spec/acceptance/steps/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
-  config.include(EmailSpec::Helpers)
-  config.include(EmailSpec::Matchers)
-
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.mock_with :rspec
 end

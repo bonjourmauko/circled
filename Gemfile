@@ -14,7 +14,7 @@ gem "puma", ">= 1.6.3"
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
-gem "turnip", ">= 1.1.0", :group => :test
+gem "steak", ">= 2.0.0", :group => :test
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "neo4j"
 gem "quiet_assets", ">= 1.0.2", :group => :development
